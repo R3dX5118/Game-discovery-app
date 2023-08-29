@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   HStack,
   Image,
   List,
@@ -10,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import useData from "../hooks/useData";
 import { Genre } from "../hooks/useGenres";
+import getCroppedImageUrl from "../services/image-url";
 
 const GenreList = () => {
   const { data: genres, isLoading, error } = useData<Genre>("/genres");
@@ -45,10 +47,12 @@ const GenreList = () => {
               <Image
                 boxSize={"32px"}
                 borderRadius={8}
-                src={genre.image_background}
+                src={getCroppedImageUrl(genre.image_background)}
                 overflow={"hidden"}
               />
-              <Text fontSize="lg">{genre.name}</Text>
+              <Button fontSize="lg" variant={"link"}>
+                {genre.name}
+              </Button>
             </HStack>
           </ListItem>
         ))}
