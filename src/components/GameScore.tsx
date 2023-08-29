@@ -8,13 +8,11 @@ const GameScore = ({ score }: Props) => {
   const badgeColor =
     score > 90
       ? "teal"
-      : score > 85
-      ? "green"
       : score > 80
-      ? "yellow"
+      ? "green"
       : score > 70
-      ? "orange"
-      : score > 60
+      ? "yellow"
+      : score > 65
       ? "red"
       : "";
 
