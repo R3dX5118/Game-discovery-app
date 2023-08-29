@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import useData from "../hooks/useData";
 import { Genre } from "../hooks/useGenres";
-import { useState } from "react";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
