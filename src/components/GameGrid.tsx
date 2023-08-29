@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
@@ -16,9 +16,22 @@ const GameGrid = ({ selectedGenre }: Props) => {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
   ];
 
+  if (error) {
+    return (
+      <Box paddingTop={5} paddingLeft={5}>
+        <Heading>Oops...</Heading>
+        <Box paddingY={3}>
+          <Text>An error happened while trying to fetch the games...</Text>
+          <Text color="red" paddingY={1}>
+            {error}
+          </Text>
+        </Box>
+      </Box>
+    );
+  }
+
   return (
     <>
-      {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{
           base: 1,
