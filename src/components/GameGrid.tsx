@@ -40,7 +40,7 @@ const GameGrid = ({ gameQuery }: Props) => {
           xl: 4,
         }}
         padding={10}
-        spacing={5}
+        spacing={6}
       >
         {isLoading &&
           skeletons.map((skeleton) => (
